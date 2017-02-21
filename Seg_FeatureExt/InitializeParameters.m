@@ -2,6 +2,12 @@ function [ p ] = InitializeParameters( )
 %InitializeParameters inilialize parameters function
 %   It inilialize parameters of nuclei segmentation and feature extraction 
 % pipeline
+%
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
     % General Parameters 
     p.spacing = [1,1];

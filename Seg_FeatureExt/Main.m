@@ -2,8 +2,14 @@ function  Main( InputFolder )
 %Main is starting point of program
 %   It will take input the folder address having tif files - 3D Lightsheet
 %   microscopic images
+%
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
-	addpath('/home/hi41/WS/Exp_Segmentation_FeatureExtraction/Include')
+	addpath('Include/')
 	
     %% Inilialize Parameters
     p = InitializeParameters();

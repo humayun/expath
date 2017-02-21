@@ -1,6 +1,12 @@
 function [ Out, im_rgb ] = FuseGTAndBW( GT, BW, im )
 %UNTITLED3 Summary of this function goes here
 %   Detailed explanation goes here
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
+
     GT = logical(GT);
     BW = logical(BW);
     [Y,X] = size(GT);

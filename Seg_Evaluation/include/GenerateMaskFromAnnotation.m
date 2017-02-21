@@ -1,14 +1,19 @@
 function GenerateMaskFromAnnotation()
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
     %% Downloadiing User Database (Images + Annotations) from LabelMe Website
     % Define the root folder for the images
-    HOMEIMAGES = 'H:/Datasets/LSM/LabelMe/PreExpanded'; 
-    HOMEANNOTATIONS = 'H:/Datasets/LSM/LabelMe/PreExpanded/Annotation'; 
-    HOMEMASKS = 'H:/Datasets/LSM/LabelMe/PreExpanded/Masks/'; 
+    HOMEIMAGES = 'PreExpanded'; 
+    HOMEANNOTATIONS = 'PreExpanded/Annotation'; 
+    HOMEMASKS = 'PreExpanded/Masks/'; 
     mkdir(HOMEMASKS);
 
     % Database name with path on LabelMe website
-    DatabaseName ={'users/hirshad/becklab_perexpanded'};
+    DatabaseName ={'becklab_perexpanded'};
 
     LMinstall(DatabaseName, HOMEIMAGES,HOMEANNOTATIONS);
     
@@ -65,9 +70,3 @@ function GenerateMaskFromAnnotation()
     end
 end
 
-for i=1:length(Files)
-    [~,ImageName,~] = fileparts(Files(i).name);
-    im = imread(strcat(BWPath, ImageName, '.png'));
-    ImageName(ImageName==' ')='';
-    imwrite(im, lower(strcat(BWPath2, ImageName, '.png')));
-end

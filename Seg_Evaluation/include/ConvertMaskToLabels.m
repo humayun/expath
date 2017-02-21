@@ -1,4 +1,9 @@
 function [ Label ] = ConvertMaskToLabels( mask )
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
     [X,Y,N] = size(mask);
     Label = zeros(X,Y);

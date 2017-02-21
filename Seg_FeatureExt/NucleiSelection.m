@@ -1,7 +1,11 @@
 function [BW, NoSmallObjRemoved, NoLargeObjRemoved] = NucleiSelection(BW,MinSize,MaxSize,Conn)
 %SIZEFILTERING function remove small and large object from binary image
 %
-% ########################################################################
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
     [~,L1] = bwlabeln(BW);
     BW = bwareaopen(BW,MinSize,Conn);

@@ -1,12 +1,16 @@
-clear all;
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
 %% Downloadiing User Database (Images + Annotations) from LabelMe Website
 % Define the root folder for the images
-HOMEIMAGES = 'H:/Datasets/LSM/LabelMe/Matlab/Images'; 
-HOMEANNOTATIONS = 'H:/Datasets/LSM/LabelMe/Matlab/Annotation'; 
+HOMEIMAGES = 'Images/'; 
+HOMEANNOTATIONS = 'Annotation/'; 
 
 % Database name with path on LabelMe website
-DatabaseName ={'users/hirshad/test'};
+DatabaseName ={'test'};
 
 LMinstall(DatabaseName, HOMEIMAGES,HOMEANNOTATIONS);
 

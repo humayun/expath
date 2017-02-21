@@ -1,5 +1,12 @@
 function ComputeFeaturesSummary(FeaturePath)
-	srcFiles1 = dir(strcat(FeaturePath,'*_CMFeatures.csv'));
+%
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
+
+    srcFiles1 = dir(strcat(FeaturePath,'*_CMFeatures.csv'));
 	srcFiles2 = dir(strcat(FeaturePath,'*_RLFeatures.csv'));
 	srcFiles3 = dir(strcat(FeaturePath,'*_IntensityFeatures.csv'));
 	srcFiles4 = dir(strcat(FeaturePath,'*_MorphologicalFeatures.csv'));

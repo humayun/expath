@@ -2,6 +2,13 @@ function [ SumFeatures ] = SummarizeFeatures( Features )
 %SummarizeFeatures Summarize all the features 
 %   SummarizeFeatures summarize all the features, like mean, median, STD,
 %   Skewness, Kurtosis, MAD, IQR, 
+%
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
+
     
     SumFeatures = struct;
     F = table2array(Features);

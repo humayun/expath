@@ -1,6 +1,12 @@
 function[S_TPR,S_PPV,S_FM,S_TNR,S_FPR,S_AUC,S_Acc,S_OL,S_Dic,S_Kappa,S_SC, ...
     S_RI,S_ARI,S_GCE,S_MI,S_VI] = SegEva_Image(GT,BW)
 
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
+
     [TP,FN,FP,TN,n_GT,n_BW,A,B,C,D] = ComputeContingencyTable(GT,BW);
     
     % True Positive Rate or Sensitivity or Recall

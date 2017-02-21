@@ -1,5 +1,11 @@
 function [MorphFeatures, NucleiCentroids] = ComputeMorphologicalFeatures( BW, FeaturePath, ImageName )
-%ComputeMorphologicalFeatures compute morphological features
+% ComputeMorphologicalFeatures compute morphological features
+%
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
     morphFeatures = regionprops(logical(BW),'Centroid', 'Area', ...
         'Perimeter', 'MajorAxisLength', 'MinorAxisLength', ...
@@ -50,8 +56,8 @@ function [MorphFeatures, NucleiCentroids] = ComputeMorphologicalFeatures( BW, Fe
     MorphFeatures.Ellipse_X = arrEllipse_X;
     MorphFeatures.Ellipse_Y = arrEllipse_Y;
     if(nargin == 3)
-        struct2csv(NucleiCentroids,strcat(FeaturePath,ImageName,'_Centroid.csv'));
-        struct2csv(MorphFeatures,strcat(FeaturePath,ImageName,'_MorphologicalFeatures.csv'));
+        writetable(struct2table(NucleiCentroids,strcat(FeaturePath,ImageName,'_Centroid.csv')));
+        writetable(struct2table(MorphFeatures,strcat(FeaturePath,ImageName,'_MorphologicalFeatures.csv')));
     end
     MorphFeatures = struct2table(MorphFeatures);
 end

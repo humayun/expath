@@ -7,7 +7,11 @@ function [ IntensityFeatures ] = ComputeIntensityFeatures( RGB, BW, NoOfChannels
 % features in 4 selected or 7 selected channels. If NoOfChannels is
 % character, then it compute features only in that channels.
 %
-% author: Humayun Irshad (12/2015)
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
 %%
     nucleiStats = regionprops( logical(BW), 'PixelIdxList' );
@@ -417,7 +421,7 @@ function [ IntensityFeatures ] = ComputeIntensityFeatures( RGB, BW, NoOfChannels
     
     %% Writing features
     if(nargin == 5)
-        struct2csv(IntensityFeatures,strcat(FeaturesPath,ImageName,'_IntensityFeatures.csv'));
+        writetable(struct2table(IntensityFeatures,strcat(FeaturesPath,ImageName,'_IntensityFeatures.csv')));
     end        
     IntensityFeatures = struct2table(IntensityFeatures);
 end

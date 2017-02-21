@@ -2,7 +2,13 @@ function [ RLFeatures ] = ComputeRLFeatures( RGB, BW, NoOfChannels, GrayLevels, 
 %ComputeRLFeatures compute Run-Length features in seven color 
 %channels (Red, Green, Blue, HSV(V), Lab(L), H&E(H) and BR
 %
-    if(nargin < 4)
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
+
+   if(nargin < 4)
         GrayLevels = 64;
     end
     
@@ -849,7 +855,7 @@ function [ RLFeatures ] = ComputeRLFeatures( RGB, BW, NoOfChannels, GrayLevels, 
         end
     end
     if(nargin == 6)
-         struct2csv(RLFeatures,strcat(FeaturesPath,ImageName,'_RLFeatures.csv'));
+         writetable(struct2table(RLFeatures,strcat(FeaturesPath,ImageName,'_RLFeatures.csv')));
     end
     RLFeatures = struct2table(RLFeatures);
 end

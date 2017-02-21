@@ -1,22 +1,28 @@
-% addpath('/home/hi41/WS/MatCode/Lib');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/3Dtools');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/ADMINtools');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/SUNdatabase');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/XMLtools');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/compatibility');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/features');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/imagemanipulation');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/install');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/main');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/objectdetection');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/old');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/parts');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/primalSVM');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/querytools');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/utils');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/video');
-% addpath('/home/hi41/WS/MatCode/LabelMeToolbox/wordnet');
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
+
+% addpath('Include');
+% addpath('LabelMeToolbox');
+% addpath('LabelMeToolbox/3Dtools');
+% addpath('LabelMeToolbox/ADMINtools');
+% addpath('LabelMeToolbox/SUNdatabase');
+% addpath('LabelMeToolbox/XMLtools');
+% addpath('LabelMeToolbox/compatibility');
+% addpath('LabelMeToolbox/features');
+% addpath('LabelMeToolbox/imagemanipulation');
+% addpath('LabelMeToolbox/install');
+% addpath('LabelMeToolbox/main');
+% addpath('LabelMeToolbox/objectdetection');
+% addpath('LabelMeToolbox/old');
+% addpath('LabelMeToolbox/parts');
+% addpath('LabelMeToolbox/primalSVM');
+% addpath('LabelMeToolbox/querytools');
+% addpath('LabelMeToolbox/utils');
+% addpath('LabelMeToolbox/video');
+% addpath('LabelMeToolbox/wordnet');
 
 %% 
 %*** This program required LabelMe Toolbox, This program download data
@@ -25,8 +31,7 @@
 
 %% Downloadiing User Database (Images + Annotations) from LabelMe Website
 % Define the root folder for the images
-HOMEIMAGES = 'H:/Datasets/LSM/LabelMe/Expanded/';
-%HOMEIMAGES = '/groups/becklab/LSM/Expanded/';
+HOMEIMAGES = 'Expanded/';
 HOMEANNOTATIONS = strcat(HOMEIMAGES,'Annotation'); 
 D = LMdatabase(HOMEANNOTATIONS);    % Reading the index
 HOMEMASKS = strcat(HOMEIMAGES,'Masks/'); 

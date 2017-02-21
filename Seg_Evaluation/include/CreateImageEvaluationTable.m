@@ -1,4 +1,9 @@
 function [Result] = CreateImageEvaluationTable( Files )
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
     for i = 1:length(Files)
         [~,imagename,~] = fileparts(Files(i).name);

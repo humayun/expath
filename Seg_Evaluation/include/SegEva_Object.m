@@ -1,4 +1,9 @@
 function [S_TP,S_FN,S_FP,S_TPR,S_PPV,S_FM,S_OL,S_SC] = SegEva_Object(GT_PixelIdx, BW_PixelIdx)
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
     S_TP = 0;
     S_FN = 0;

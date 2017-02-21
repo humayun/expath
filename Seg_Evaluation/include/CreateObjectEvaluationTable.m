@@ -1,4 +1,9 @@
 function [Result] = CreateObjectEvaluationTable( NoOfObjects )
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
 
     N_Found = zeros(NoOfObjects,1);
     S_TP = zeros(NoOfObjects,1);

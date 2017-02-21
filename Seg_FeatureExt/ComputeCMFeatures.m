@@ -2,6 +2,12 @@ function [ GLCMFeatures ] = ComputeCMFeatures( RGB, BW, NoOfChannels, GrayLevels
 %ComputeCMFeatures compute Co-occurrence features in seven color 
 %channels (Red, Green, Blue, HSV(V), Lab(L), H&E(H) and BR
 %
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
+
     if(nargin < 4)
         GrayLevels = 64;
     end
@@ -942,31 +948,7 @@ function [ GLCMFeatures ] = ComputeCMFeatures( RGB, BW, NoOfChannels, GrayLevels
     end
     
      if(nargin == 6)
-         struct2csv(GLCMFeatures, strcat(FeaturesPath, ImageName, '_CMFeatures.csv'));
+         writetable(struct2table(GLCMFeatures, strcat(FeaturesPath, ImageName, '_CMFeatures.csv')));
      end
      GLCMFeatures = struct2table(GLCMFeatures);
 end
-
-%      GLCMFeatures = struct( ...
-%       'Autocorrelation_R',0, 'CorrelationP_R',0, 'Contrast_R',0, ...
-%       'ClusterShade_R',0, 'ClusterProminence_R',0, 'Energy_R',0, ...
-%       'Entropy_R',0, 'HomogeneityP_R',0, 'InverseDiffNormalized_R',0, ...
-%       'InverseDiffMomentNormalized_R',0, 'Dissimilarity_R',0, ...
-%       'MaxProbability_R',0, 'InfoMeasureCorr1_R',0, ... 
-%       'InformeasureCorr2_R',0, 'SumSqauresVariance_R',0, ...
-%       'SumAverage_R',0, 'SumVariance_R',0, 'SumEntropy_R',0, ... 
-%       'DiffVariance_R',0, 'DiffEntropy_R',0, 'CorrelationM_R',0, ...
-%       'HomogeneityM_R',0);
-
-%     RGB2 = RGB;
-%     RGB2(bb(i,2):bb(i,2)+bb(i,4),bb(i,1):bb(i,1)+bb(i,3), 1) = 0;
-%     RGB2(bb(i,2):bb(i,2)+bb(i,4),bb(i,1):bb(i,1)+bb(i,3), 2) = 255;
-%     RGB2(bb(i,2):bb(i,2)+bb(i,4),bb(i,1):bb(i,1)+bb(i,3), 3) = 0;
-%     figure, imshow(RGB2);
-%     obj=channel;
-%     obj(~(L==i)) = NaN;
-%     figure, imshow(obj);
-%     patch1 = RGB(bb(i,2):bb(i,2)+bb(i,4),bb(i,1):bb(i,1)+bb(i,3),:);
-%     patch2 = obj(bb(i,2):bb(i,2)+bb(i,4),bb(i,1):bb(i,1)+bb(i,3));
-%     figure, imshow(patch1);
-%     figure, imshow(patch2);

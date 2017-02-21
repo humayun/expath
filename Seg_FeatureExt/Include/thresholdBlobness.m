@@ -20,10 +20,6 @@ function [imThresh] = thresholdBlobness(imInput, blobDiameter, varargin)
         level = PARAMETERS.choice_of_threshold(imLoG);                
     else        
         switch PARAMETERS.choice_of_threshold
-            case 'Otsu'
-                level = thresholdOtsu(imLoG);
-            case 'Rosin'
-                level = thresholdRosin(imLoG);
             case 'MinimumError'
                 level = thresholdMinimumError(imLoG);
         end

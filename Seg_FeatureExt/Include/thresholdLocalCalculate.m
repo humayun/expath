@@ -1,6 +1,5 @@
 function [level_img, level_whole] = thresholdLocalCalculate(imageIn,choice_of_threshold,level_local_radius, pace, varargin)
-% local thresholding based on global thresholding level using one of the
-% three methods "Otsu","Rosin",or "FluorescenceImage"
+% local thresholding based on global thresholding level using method "Otsu"
 %
 % level_img = thresholdOtsu_local(imageIn,level_local_radius, pace, showPlots)
 % 
@@ -29,7 +28,7 @@ function [level_img, level_whole] = thresholdLocalCalculate(imageIn,choice_of_th
 ip=inputParser;
 ip.addRequired('imageIn',@isnumeric);
 ip.addRequired('choice_of_threshold', ...
-               @(x) ((ischar(x) && ismember(x, {'Otsu', 'Rosin', 'FluorescenceImage'})) || ...
+               @(x) ((ischar(x) && ismember(x, {'Otsu'})) || ...
                       isa(x, 'function_handle')));
 ip.addRequired('level_local_radius',@isnumeric);
 ip.addRequired('pace',@isnumeric);
@@ -68,10 +67,6 @@ try
         switch choice_of_threshold
             case 'Otsu'
                 level = thresholdOtsu(imageInNorm);
-            case 'Rosin'
-                level = thresholdRosin(imageInNorm);
-            case 'FluorescenceImage'
-                level = thresholdFluorescenceImage(imageInNorm);
         end
     end    
     level_whole = level*(maxSignal - minSignal)+minSignal;
@@ -124,10 +119,6 @@ for img_x = level_local_radius + 1 : pace : size(level_img,1) - level_local_radi
                 switch choice_of_threshold
                     case 'Otsu'
                         level = thresholdOtsu(imageInNorm);
-                    case 'Rosin'
-                        level = thresholdRosin(imageInNorm);
-                    case 'FluorescenceImage'
-                        level = thresholdFluorescenceImage(imageInNorm);
                 end                
             end
         catch

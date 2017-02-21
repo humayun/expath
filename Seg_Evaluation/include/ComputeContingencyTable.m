@@ -1,4 +1,10 @@
 function [TP,FN,FP,TN,n_GT,n_BW,A,B,C,D] = ComputeContingencyTable(GT,BW)
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
+
     GT = logical(GT);
     BW = logical(BW);
     TP = 0;

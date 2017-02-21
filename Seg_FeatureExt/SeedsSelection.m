@@ -1,7 +1,13 @@
 function [ imNucleiSeedPoints ] = SeedsSelection( imNucleiSeedPoints, p )
 %SeedsSelection function select seed point for nuclei segmentation
 %   Detailed explanation goes here
-     
+%
+% Author: (12/2015)
+% -------------------------------------------
+% Humayun Irshad (humayun.irshad@gmail.com)
+% BIDMC, Harvard Medical School
+% -------------------------------------------
+
     % Suppress all maxima with value less than 0.01% of the maximum value
     maxVal = max(imNucleiSeedPoints(:));
     imNucleiSeedPoints(imNucleiSeedPoints<=p.thresholdvalue*maxVal) = 0;
