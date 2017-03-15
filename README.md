@@ -9,3 +9,5 @@ Expansion Pathology Iamge Classification: This framework classify Expansion path
 
 3- Image Classification written in R
 
+This image classification framework for post-expansion DAPI-stained images includes foreground detection, nucleus seed detection, and nuclear segmentation. Following application of the framework, we extract three kinds of features from each segmented nucleus from both the pre-expanded and post-expanded images: nuclear morphology features, nuclear intensity features, and nuclear texture features.
+
